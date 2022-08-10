@@ -25,10 +25,4 @@ public class WebConfiguration implements WebMvcConfigurer {
     public void configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer) {
         configurer.enable();
     }
-
-    /*@Override
-    public void addCorsMappings(CorsRegistry registry) {
-        registry.addMapping("/api/v1/**").allowedOrigins("*").allowedHeaders("*")
-                .allowedMethods("GET", "PUT", "POST", "PATCH", "DELETE", "OPTIONS").allowCredentials(true);
-    }*/
 }
