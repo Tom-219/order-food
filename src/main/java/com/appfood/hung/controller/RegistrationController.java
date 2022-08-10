@@ -1,7 +1,7 @@
 package com.appfood.hung.controller;
 
 import com.appfood.hung.model.User;
-import com.appfood.hung.payload.UserRegistrationReq;
+import com.appfood.hung.payload.request.UserRegistrationReq;
 import com.appfood.hung.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

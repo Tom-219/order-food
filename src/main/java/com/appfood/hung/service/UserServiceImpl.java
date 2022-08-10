@@ -3,7 +3,7 @@ package com.appfood.hung.service;
 
 import com.appfood.hung.model.Role;
 import com.appfood.hung.model.User;
-import com.appfood.hung.payload.UserRegistrationReq;
+import com.appfood.hung.payload.request.UserRegistrationReq;
 import com.appfood.hung.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;

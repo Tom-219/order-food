@@ -1,4 +1,4 @@
-package com.appfood.hung.payload;
+package com.appfood.hung.payload.request;
 
 import lombok.Data;
 
