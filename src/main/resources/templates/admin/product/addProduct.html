@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
-<div th:replace="~{fragments/myheader1 :: text}"></div>
+<html xmlns:th="http://www.thymeleaf.org">
+<div th:replace ="~{fragments/myheader1 :: text}"></div>
 
 
 <div class="card">
@@ -8,37 +8,32 @@
         <p class="h4 mb-2 text-center">Add Product</p>
     </div>
     <div class="card-body">
-        <form class="text-center border border-light p-5" th:object="${productDto}" th:action="@{/addP}" enctype="multipart/form-data" method="post">
+        <form class="text-center border border-light p-5" th:object="${productDto}" th:action="@{/admin/product/addP}" enctype="multipart/form-data" method="post">
 
-
-
-
-                <input
-                        type = "text"
-                        name = "name"
-                        th:field = "*{name}"
-                        class = "form-control"
-                        placeholder="Tên sản phẩm"
-                />
-
-
-             <!--Price
-            <input type="text" name="price" id="price" class="form-control mb-4"
-                   placeholder="Product Price">
-
-            &lt;!&ndash; Description &ndash;&gt;
-            <textarea class="form-control mb-4" id="desc" name="desc"
-                      placeholder="Product Description">
-                                 </textarea>-->
+            <input type="text" name="name"
+                   th:field = "*{name}"
+                   id="name"
+                   class="form-control mb-4"
+                   placeholder="Tên sản phẩm">
+            <input type="number" name="price"
+                   th:field = "*{price}"
+                   id="price"
+                   class="form-control mb-4"
+                   placeholder="Giá sản phẩm">
+            <input type="text" name="description"
+                   th:field = "*{description}"
+                   id="description"
+                   class="form-control mb-4"
+                   placeholder="Mô tả sản phẩm">
 
             <tr>
-                <td>Select Country:</td>
+                <td>Chọn kiểu:</td>
                 <td>
                     <select th:field="*{category}" name = "category">
-                        <option value=""> -- </option>
+                        <option value=""> </option>
                         <option th:each="category : ${categories}"
                                 th:value="${category.id}"
-                                th:utext="${category.name}"/>
+                                th:utext="${category.name}"></option>
                     </select>
                 </td>
             </tr>
@@ -57,6 +52,4 @@
 
 
 <div th:replace ="~{fragments/alljsatbtm :: alljsatbtm}"></div>
-
-
 </html>
