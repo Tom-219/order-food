@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<div th:replace="~{fragments/myheader1 :: text}"></div>
+
+
+<div class="card">
+    <div class="card-header">
+        <p class="h4 mb-2 text-center">Add Category</p>
+    </div>
+    <div class="card-body">
+        <form class="text-center border border-light p-5"    action="/backend/category/upload"  method="post">
+
+            Name
+            <input type="text" name="name" id="name" class="form-control mb-4"
+                   placeholder="Category Name">
+
+            <button class="btn btn-info btn-block" type="submit">add</button>
+        </form>
+    </div>
+</div>
+
+
+<div th:replace ="~{fragments/alljsatbtm :: alljsatbtm}"></div>
+
+
+</html>
