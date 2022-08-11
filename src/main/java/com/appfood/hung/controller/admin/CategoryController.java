@@ -12,26 +12,23 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("admin/category/")
+@RequestMapping("/admin/category/")
 public class CategoryController {
     @Autowired
     CategoryService categoryService;
-
-    @Autowired
-    CategoryRepository categoryRepository;
 
     @GetMapping("create")
     public String create(Model model) throws Exception {
         CategoryDto dto = new CategoryDto();
         model.addAttribute("categoryDto", dto);
-        return "backend/category/create";
+        return "admin/category/create";
     }
 
     @PostMapping("upload")
 
         public String save(@ModelAttribute("category") CategoryDto categoryDto) {
             categoryService.save(categoryDto);
-            return "redirect:/backend/category/create";
+            return "redirect:/admin/category/create";
         }
 
 }

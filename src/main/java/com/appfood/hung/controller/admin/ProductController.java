@@ -29,20 +29,14 @@ public class ProductController {
         model.addAttribute("products", products);
         return "/admin/product/listProducts";
     }
-    @GetMapping("create")
-    public String create(Model model) throws Exception{
-        Product product = new Product();
-        model.addAttribute("product", product);
-        model.addAttribute("categories", categoryService.findAll());
-        return "admin/product/addProduct.html";
-    }
+
     @GetMapping("new")
     public String createProductForm(Model model) {
         // create student object to hold student form data
         ProductDto p = new ProductDto();
         model.addAttribute("categories", categoryService.findAll());
         model.addAttribute("productDto", p);
-        return "backend/product/create.html";
+        return "admin/product/addProduct";
 
     }
     @PostMapping("addP")
@@ -52,7 +46,7 @@ public class ProductController {
         model.addAttribute("categories", list);
         model.addAttribute("productDto",p);
         productService.saveProductToDB(p);
-        return "redirect:/product/new";
+        return "redirect:/admin/product/new";
     }
 
     @GetMapping("deleteProd/{id}")
