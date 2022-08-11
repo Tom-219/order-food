@@ -29,29 +29,28 @@ public class MainController {
 
     @GetMapping("/about")
     public String AboutPage() {
-        return "redirect:/about";
+        return "about";
     }
 
     @GetMapping("/contact")
     public String Contact() {
-        return "redirect:/contact";
+        return "contact";
     }
 
     @GetMapping("/gallery")
     public String Gallery() {
-        return "redirect:/gallery";
+        return "gallery";
     }
 
     @GetMapping("/menu")
     public String MenuPage() {
-        return "redirect:/menu";
+        return "menu";
     }
 
     @GetMapping("/reservation")
     public String ReservationPage() {
-        return "redirect:/reservation";
+        return "reservation";
     }
-
 
 
 }
