@@ -3,6 +3,7 @@ package com.appfood.hung.service;
 
 import com.appfood.hung.model.Role;
 import com.appfood.hung.model.User;
+import com.appfood.hung.payload.dto.UserDto;
 import com.appfood.hung.payload.request.UserRegistrationReq;
 import com.appfood.hung.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,6 +37,17 @@ public class UserServiceImpl implements UserService {
         user.setEmail(registration.getEmail());
         user.setPassword(passwordEncoder.encode(registration.getPassword()));
         user.setRoles(Collections.singletonList(new Role("ROLE_USER")));
+        return userRepository.save(user);
+    }
+
+    @Override
+    public User save(UserDto userDto) {
+        User user = new User();
+        user.setFirstName(userDto.getFirstName());
+        user.setLastName(userDto.getLastName());
+        user.setEmail(userDto.getEmail());
+        user.setPassword(passwordEncoder.encode(userDto.getPassword()));
+        user.setRoles((Collection<Role>) userDto.getRoles());
         return userRepository.save(user);
     }
 

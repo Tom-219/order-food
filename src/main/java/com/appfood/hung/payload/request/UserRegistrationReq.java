@@ -11,11 +11,15 @@ public class UserRegistrationReq {
 
     private String password;
 
+    private String confirmEmail;
+
     private String confirmPassword;
+
+    private Boolean terms;
 
     private String email;
 
-    private String confirmEmail;
 
-    private Boolean terms;
+
+
 }
