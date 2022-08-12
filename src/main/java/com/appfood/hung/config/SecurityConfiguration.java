@@ -24,11 +24,12 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                     .antMatchers(
                             "/registration**",
                             "/admin/**",
+                            "/user/**",
+                            "/index1/**",
                             "/js/**",
                             "/css/**",
                             "/img/**",
                             "/images/**",
-                            "/index1/**",
                             "/about/**",
                             "/contact/**",
                             "/gallery/**",

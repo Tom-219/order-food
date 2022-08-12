@@ -64,7 +64,7 @@
                         <p class="card-text" style="color: black;">[[*{product.description}]]</p>
                         <p class="card-text" style="color: black;">[[*{product.price}]]</p>
 
-                        <a th:href = "@{/admin/addtocart}" class="btn btn-primary">Add to Cart</a>
+                        <a th:href = "@{/user/addToCart/{id} (id=${product.id})}" class="btn btn-primary">Add to Cart</a>
                     </div>
                 </div>
                 </tr>

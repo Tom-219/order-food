@@ -16,6 +16,9 @@ ProductService {
     @Autowired
     private ProductRepository productRepo;
 
+/*
+    public Product findById(){return productRepo.findById();}
+*/
     public void  saveProductToDB(ProductDto p){
         productRepo.save(p.converToEntity());
     }
@@ -47,5 +50,12 @@ ProductService {
         p = productRepo.findById(id).get();
         p.setPrice(price);
         productRepo.save(p);
+    }
+
+
+    public Product findById(Long id) {
+        Product p = new Product();
+        p =productRepo.findById(id).get();
+        return p;
     }
 }

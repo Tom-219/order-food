@@ -57,6 +57,10 @@ public class Product {
 	@JoinColumn(name = "category_id")
 	private Category category;
 
+	@ManyToOne
+	@JoinColumn(name = "cartItem_id")
+	private CartItem cartItem;
+
 
 	@Override
 	public String toString() {
