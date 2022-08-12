@@ -31,18 +31,22 @@ public class CartItemController {
         model.addAttribute("cartItems", cartItems);
         model.addAttribute("total", cartService.getAmount());
         model.addAttribute("NoOfItems", cartService.getCount());
-        return "cartItem/list";}
+        return "admin/cartItem/list";}
 
     @GetMapping ("addToCart/{id}")
     public String add(@PathVariable("id")Long id){
             Product product = productService.findById(id);
          if(product !=null){
              CartItem item = new CartItem();
-             BeanUtils.copyProperties(product, item);
+             /*BeanUtils.copyProperties(product, item);*/
+             item.setPrice((double) product.getPrice());
+             item.setName(product.getName());
              item.setQuantity(1);
              cartService.add(item);
          }
-        return"index1";}
+        /*return"admin/cartItem/list";*/
+        return"admin/cartItem/list";
+    }
 
 
     @GetMapping("remove")

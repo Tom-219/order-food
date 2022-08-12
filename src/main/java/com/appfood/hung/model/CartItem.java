@@ -25,17 +25,19 @@ public class CartItem {
     @Column
     private String name;
 
-    public Set<Product> getProduct() {
+
+
+    @ManyToOne
+    @JoinColumn(name = "productId")
+    private Product product;
+
+    public Product getProduct() {
         return product;
     }
 
-    public void setProduct(Set<Product> product) {
+    public void setProduct(Product product) {
         this.product = product;
     }
-
-    @OneToMany
-    @JoinColumn(name = "productId")
-    private Set<Product> product = new HashSet<>();
 
 
     public Long getId() {

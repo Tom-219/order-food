@@ -9,12 +9,11 @@ import org.springframework.web.context.annotation.SessionScope;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Set;
 
 @Service
 @SessionScope
 public class CartServiceImpl implements CartService{
-    private Map<Set<Product>, CartItem> map = new HashMap<>();
+    private Map<Product, CartItem> map = new HashMap<>();
 
     public void add(CartItem item){
         CartItem existedItem = map.get(item.getProduct());
