@@ -22,12 +22,12 @@ public class ProductController {
     @Autowired
     private CategoryService categoryService;
 
-    @GetMapping("listProducts")
+    @GetMapping("listproducts")
     public String showExampleView(Model model)
     {
         List<Product> products = productService.getAllProduct();
         model.addAttribute("products", products);
-        return "/admin/product/listProducts";
+        return "/admin/product/listproduct";
     }
 
     @GetMapping("new")

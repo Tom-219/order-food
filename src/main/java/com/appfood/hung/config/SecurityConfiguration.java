@@ -27,13 +27,14 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                             "/js/**",
                             "/css/**",
                             "/img/**",
-                            "/index1/**",
                             "/images/**",
+                            "/index1/**",
                             "/about/**",
                             "/contact/**",
                             "/gallery/**",
                             "/menu/**",
                             "/reservation/**",
+                            "/listproducts/**",
                             "/webjars/**").permitAll()
                     .anyRequest().authenticated()
                 .and()
