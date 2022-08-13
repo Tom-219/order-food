@@ -87,7 +87,7 @@
 
                                 <form action="/changeDescription" method="post">
                                     <div class="form-group">
-                                        <label>product id</label> <input type="text"
+                                        <label>product id</label> <input type="hidden"
                                                                          th:value="*{product.id}" class="form-control" name="id">
                                         <label>new Product description</label> <input type="text"
                                                                                       name="newDescription" class="form-control"> <br>
@@ -127,7 +127,7 @@
 
                                 <form action="/changePrice" method="post">
                                     <div class="form-group">
-                                        <label>product id</label> <input type="text"
+                                        <label>product id</label> <input type="hidden"
                                                                          th:value="*{product.id}" class="form-control" name="id">
                                         <label>new Product price</label> <input type="text"
                                                                                 name="newPrice" class="form-control"> <br>
