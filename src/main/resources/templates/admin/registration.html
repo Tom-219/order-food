@@ -104,11 +104,11 @@
 					<tr>
 						<td>Select Role:</td>
 						<td>
-							<select th:field="*{roles}" name = "roles">
+							<select th:field="*{role}" name = "role">
 								<option value=""> </option>
-								<option th:each="roles : ${roles}"
-										th:value="${roles.id}"
-										th:utext="${roles.name}"></option>
+								<option th:each="role : ${roles}"
+										th:value="${role.id}"
+										th:utext="${role.name}"></option>
 							</select>
 						</td>
 					</tr>

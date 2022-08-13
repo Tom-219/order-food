@@ -1,9 +1,8 @@
 package com.appfood.hung.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 public class Role {
@@ -35,6 +34,7 @@ public class Role {
     public void setName(String name) {
         this.name = name;
     }
+
 
     @Override
     public String toString() {

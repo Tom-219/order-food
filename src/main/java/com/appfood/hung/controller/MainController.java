@@ -18,7 +18,7 @@ public class MainController {
 
     @GetMapping("/")
     public String root() {
-        return "index";
+        return "index1";
     }
 
     @GetMapping("/login")
